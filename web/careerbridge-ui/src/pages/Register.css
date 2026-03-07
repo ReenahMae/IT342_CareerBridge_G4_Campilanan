@@ -1,0 +1,177 @@
+.register-container{
+display:flex;
+height:100vh;
+font-family:Arial;
+}
+
+.register-left{
+width:50%;
+background:#2a2622;
+color:white;
+padding:80px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.register-left h1{
+font-size:48px;
+margin:20px 0;
+}
+
+.register-left p{
+color:#c4bfb8;
+max-width:420px;
+}
+
+.register-right{
+width:50%;
+background:#f0eeeb;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:24px;
+}
+
+.register-card{
+background:white;
+padding:32px;
+width:100%;
+max-width:420px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+border-radius:5px;
+}
+
+.register-card h2{
+margin:0;
+}
+
+.register-card > p{
+margin:8px 0 20px;
+color:#777;
+}
+
+.register-card form{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.name-row{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+.register-card input[type="text"],
+.register-card input[type="email"],
+.register-card input[type="password"]{
+width:100%;
+padding:10px;
+border:1px solid #ccc;
+box-sizing:border-box;
+}
+
+.role-group{
+margin-top:2px;
+}
+
+.role-group span{
+display:block;
+font-size:14px;
+color:#444;
+margin-bottom:8px;
+}
+
+.role-group label{
+display:inline-flex;
+align-items:center;
+margin-right:18px;
+gap:6px;
+font-size:14px;
+color:#333;
+}
+
+.register-card button{
+width:100%;
+padding:12px;
+background:#2a2622;
+color:white;
+border:none;
+cursor:pointer;
+position:relative;
+z-index:1;
+}
+
+.divider{
+text-align:center;
+margin:15px 0;
+color:#888;
+}
+
+.google-btn{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+padding:10px;
+border:1px solid #ccc;
+text-decoration:none;
+color:black;
+cursor:pointer;
+background:#fff;
+position:relative;
+z-index:1;
+}
+
+.google-logo{
+width:16px;
+height:16px;
+display:block;
+}
+
+.login-link{
+margin-top:15px;
+text-align:center;
+}
+
+.login-link a{
+color:#2a2622;
+font-weight:600;
+cursor:pointer;
+}
+
+@media (max-width:900px){
+.register-container{
+height:auto;
+min-height:100vh;
+flex-direction:column;
+}
+
+.register-left,
+.register-right{
+width:100%;
+}
+
+.register-left{
+padding:48px 24px;
+}
+
+.register-left h1{
+font-size:40px;
+}
+
+.register-right{
+padding:24px;
+}
+}
+
+@media (max-width:520px){
+.name-row{
+grid-template-columns:1fr;
+}
+
+.register-left h1{
+font-size:34px;
+}
+}
