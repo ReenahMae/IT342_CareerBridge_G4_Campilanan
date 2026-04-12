@@ -4,6 +4,8 @@ import edu.cit.campilanan.careerbridge.Entity.UserEntity;
 import edu.cit.campilanan.careerbridge.Repository.UserRepository;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
+import edu.cit.campilanan.careerbridge.Service.adapter.GoogleUserAdapter;
+
 
 import java.time.LocalDateTime;
 
@@ -22,13 +24,7 @@ public class OAuthService {
 
         return userRepository.findByEmail(email).orElseGet(() -> {
 
-            UserEntity user = new UserEntity();
-            user.setEmail(email);
-            user.setFullName(name);
-            user.setRole("JOB_SEEKER");
-            user.setAuthProvider("GOOGLE");
-            user.setCreatedAt(LocalDateTime.now());
-
+            UserEntity user = GoogleUserAdapter.convert(oauthUser);
             return userRepository.save(user);
         });
     }

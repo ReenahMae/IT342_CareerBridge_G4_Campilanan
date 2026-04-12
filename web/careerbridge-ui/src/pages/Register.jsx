@@ -14,6 +14,7 @@ const [password,setPassword] = useState("");
 const [confirmPassword,setConfirmPassword] = useState("");
 const [role,setRole] = useState("JOB_SEEKER");
 const [error,setError] = useState("");
+const [showSuccess,setShowSuccess] = useState(false);
 
 const handleRegister = async (e)=>{
 
@@ -32,13 +33,17 @@ try{
 
 await register(fullName,email,password,role);
 
-alert("Account created");
+setShowSuccess(true);
+setError("");
 
+setTimeout(()=>{
 navigate("/");
+},2500);
 
 }catch(err){
 
 setError(err.message);
+setShowSuccess(false);
 
 }
 
@@ -64,6 +69,21 @@ One account is all it takes to get started.
 <div className="register-right">
 
 <div className="register-card">
+
+{showSuccess && (
+<div className="success-notification">
+<div className="success-icon">✓</div>
+<div className="success-content">
+<strong>Account successfully created!</strong>
+<p>You can now log in to your CareerBridge account.</p>
+</div>
+<button 
+type="button" 
+className="close-btn"
+onClick={()=>setShowSuccess(false)}
+>×</button>
+</div>
+)}
 
 <h2>Create Account</h2>
 

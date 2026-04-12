@@ -5,6 +5,9 @@ import edu.cit.campilanan.careerbridge.dto.RegisterRequestDTO;
 import edu.cit.campilanan.careerbridge.dto.LoginRequestDTO;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import edu.cit.campilanan.careerbridge.Service.strategy.*;
+import edu.cit.campilanan.careerbridge.Service.factory.UserFactory;
+
 
 
 import java.time.LocalDateTime;
@@ -28,23 +31,13 @@ public class UserService {
             throw new RuntimeException("Email already registered");
         }
 
-        UserEntity user = new UserEntity();
+        // 👇 USE FACTORY HERE
+        UserEntity user = UserFactory.createUser(request.getRole());
+
         user.setFullName(request.getFullName());
         user.setEmail(request.getEmail());
-
-        // HASH PASSWORD
         user.setPasswordHash(passwordEncoder.encode(request.getPassword()));
-
         user.setAuthProvider("LOCAL");
-
-        String role = request.getRole();
-
-        if(role.equals("JOB_SEEKER") || role.equals("EMPLOYER")){
-            user.setRole(role);
-        }else{
-            throw new RuntimeException("Invalid role");
-        }
-
         user.setCreatedAt(LocalDateTime.now());
 
         return userRepository.save(user);
@@ -52,16 +45,20 @@ public class UserService {
 
     public String login(LoginRequestDTO request){
 
-        UserEntity user = userRepository.findByEmail(request.getEmail())
-                .orElseThrow(() -> new RuntimeException("User not found"));
+        LoginContext context = new LoginContext();
 
-        if(user.getAuthProvider().equals("GOOGLE")){
-            throw new RuntimeException("Please login using Google");
+        // Decide which strategy to use
+        if(request.getLoginType().equalsIgnoreCase("manual")){
+            context.setStrategy(new ManualLoginStrategy(userRepository, passwordEncoder));
+        } else {
+            throw new RuntimeException("Invalid login type");
         }
 
-        if(!passwordEncoder.matches(request.getPassword(), user.getPasswordHash())){
-            throw new RuntimeException("Invalid password");
-        }
+        // Execute login
+        UserEntity user = context.executeLogin(
+                request.getEmail(),
+                request.getPassword()
+        );
 
         return jwtService.generateToken(user.getEmail(), user.getRole());
     }
