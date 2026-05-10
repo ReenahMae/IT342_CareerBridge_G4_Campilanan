@@ -35,15 +35,23 @@ public class SecurityConfig {
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**","/oauth2/**","/login/**").permitAll()
+                .requestMatchers("/auth/**","/oauth2/**","/login/**").permitAll()
+                        .requestMatchers("/api/jobs/**").permitAll()
+                        .requestMatchers("/api/applications/**").permitAll()
+                        .requestMatchers("/api/profile/**").permitAll()
+                        .requestMatchers("/api/experiences/**").permitAll()
+                        .requestMatchers("/api/educations/**").permitAll()
+                        .requestMatchers("/api/resume/**").permitAll()
+                        .requestMatchers("/uploads/**").permitAll()
 
-                        .requestMatchers("/admin/**").hasRole("ADMIN")
-                        .requestMatchers("/superadmin/**").hasRole("SUPERADMIN")
-                        .requestMatchers("/employer/**").hasRole("EMPLOYER")
-                        .requestMatchers("/jobseeker/**").hasRole("JOB_SEEKER")
 
-                        .anyRequest().authenticated()
-                )
+                .requestMatchers("/admin/**").hasRole("ADMIN")
+                .requestMatchers("/superadmin/**").hasRole("SUPERADMIN")
+                .requestMatchers("/employer/**").hasRole("EMPLOYER")
+                .requestMatchers("/jobseeker/**").hasRole("JOB_SEEKER")
+
+                .anyRequest().authenticated()
+        )
 
                 .oauth2Login(oauth -> oauth
                         .successHandler((request, response, authentication) -> {

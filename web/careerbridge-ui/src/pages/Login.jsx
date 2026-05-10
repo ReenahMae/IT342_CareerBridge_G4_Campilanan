@@ -18,13 +18,35 @@ function Login(){
 
     if(data.token){
 
-      localStorage.setItem("token",data.token);
+ localStorage.setItem("token", data.token);
+localStorage.setItem("role", data.role);
 
-      navigate("/dashboard");
+localStorage.setItem(
+  "user",
+  JSON.stringify({
+    id: data.id,
+    email: data.email,
+    role: data.role
+  })
+);
 
-    }else{
-      alert("Invalid credentials");
-    }
+  // EMPLOYER LOGIN
+  if(data.role === "EMPLOYER"){
+    navigate("/employer/dashboard");
+  }
+
+  // JOB SEEKER LOGIN
+  else if(data.role === "JOB_SEEKER"){
+    navigate("/dashboard");
+  }
+
+  else{
+    navigate("/");
+  }
+
+}else{
+  alert("Invalid credentials");
+}
 
   }
 
@@ -99,6 +121,7 @@ function Login(){
     </div>
 
   )
+
 }
 
 export default Login

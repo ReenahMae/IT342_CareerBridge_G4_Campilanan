@@ -1,7 +1,6 @@
 .register-container{
 display:flex;
 height:100vh;
-font-family:Arial;
 }
 
 .register-left{
@@ -15,7 +14,7 @@ justify-content:center;
 }
 
 .register-left h1{
-font-size:48px;
+font-size:clamp(32px, 4.2vw, 42px);
 margin:20px 0;
 }
 
@@ -223,7 +222,7 @@ padding:48px 24px;
 }
 
 .register-left h1{
-font-size:40px;
+font-size:36px;
 }
 
 .register-right{
@@ -237,6 +236,6 @@ grid-template-columns:1fr;
 }
 
 .register-left h1{
-font-size:34px;
+font-size:32px;
 }
 }

@@ -7,6 +7,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import edu.cit.campilanan.careerbridge.Service.strategy.*;
 import edu.cit.campilanan.careerbridge.Service.factory.UserFactory;
+import edu.cit.campilanan.careerbridge.Entity.ProfileEntity;
+import edu.cit.campilanan.careerbridge.Repository.ProfileRepository;
 
 
 
@@ -18,11 +20,18 @@ public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
+    private final ProfileRepository profileRepository;
 
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, JwtService jwtService) {
+    public UserService(
+            UserRepository userRepository,
+            PasswordEncoder passwordEncoder,
+            JwtService jwtService,
+            ProfileRepository profileRepository
+    ) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.jwtService = jwtService;
+        this.profileRepository = profileRepository;
     }
 
     public UserEntity register(RegisterRequestDTO request) {
@@ -40,26 +49,54 @@ public class UserService {
         user.setAuthProvider("LOCAL");
         user.setCreatedAt(LocalDateTime.now());
 
-        return userRepository.save(user);
+        UserEntity savedUser = userRepository.save(user);
+
+// CREATE PROFILE AUTOMATICALLY
+        ProfileEntity profile = new ProfileEntity();
+
+        profile.setId(savedUser.getEmail());
+        profile.setUserId(savedUser.getEmail());
+        profile.setFull_name(savedUser.getFullName());
+
+        profileRepository.save(profile);
+
+        return savedUser;
     }
 
-    public String login(LoginRequestDTO request){
+    public UserEntity authenticateUser(LoginRequestDTO request) {
 
         LoginContext context = new LoginContext();
 
-        // Decide which strategy to use
-        if(request.getLoginType().equalsIgnoreCase("manual")){
-            context.setStrategy(new ManualLoginStrategy(userRepository, passwordEncoder));
-        } else {
-            throw new RuntimeException("Invalid login type");
+        String loginType = request.getLoginType();
+
+        if (loginType == null) {
+            loginType = "manual";
         }
 
-        // Execute login
-        UserEntity user = context.executeLogin(
+        switch (loginType.toLowerCase()) {
+
+            case "manual":
+                context.setStrategy(
+                        new ManualLoginStrategy(userRepository, passwordEncoder)
+                );
+                break;
+
+            default:
+                throw new RuntimeException("Invalid login type");
+        }
+
+        return context.executeLogin(
                 request.getEmail(),
                 request.getPassword()
         );
+    }
 
-        return jwtService.generateToken(user.getEmail(), user.getRole());
+
+    public String generateToken(UserEntity user) {
+
+        return jwtService.generateToken(
+                user.getEmail(),
+                user.getRole()
+        );
     }
 }

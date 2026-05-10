@@ -29,6 +29,18 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                                     FilterChain filterChain)
             throws ServletException, IOException {
 
+        String path = request.getRequestURI();
+
+        // Skip JWT validation for public endpoints
+        if (path.startsWith("/api/applications/")
+                || path.startsWith("/api/jobs/")
+                || path.startsWith("/api/profile/")
+                || path.startsWith("/uploads/")) {
+
+            filterChain.doFilter(request, response);
+            return;
+        }
+
         String authHeader = request.getHeader("Authorization");
 
         if(authHeader == null || !authHeader.startsWith("Bearer ")){
@@ -38,23 +50,29 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         String token = authHeader.substring(7);
 
-        if(jwtService.isTokenValid(token) &&
-                SecurityContextHolder.getContext().getAuthentication() == null){
+        try {
 
-            String email = jwtService.extractEmail(token);
-            String role = jwtService.extractRole(token);
+            if(jwtService.isTokenValid(token) &&
+                    SecurityContextHolder.getContext().getAuthentication() == null){
 
-            SimpleGrantedAuthority authority =
-                    new SimpleGrantedAuthority("ROLE_" + role);
+                String email = jwtService.extractEmail(token);
+                String role = jwtService.extractRole(token);
 
-            UsernamePasswordAuthenticationToken authentication =
-                    new UsernamePasswordAuthenticationToken(
-                            email,
-                            null,
-                            Collections.singletonList(authority)
-                    );
+                SimpleGrantedAuthority authority =
+                        new SimpleGrantedAuthority("ROLE_" + role);
 
-            SecurityContextHolder.getContext().setAuthentication(authentication);
+                UsernamePasswordAuthenticationToken authentication =
+                        new UsernamePasswordAuthenticationToken(
+                                email,
+                                null,
+                                Collections.singletonList(authority)
+                        );
+
+                SecurityContextHolder.getContext().setAuthentication(authentication);
+            }
+
+        } catch (Exception e) {
+            // Ignore invalid tokens
         }
 
         filterChain.doFilter(request,response);
