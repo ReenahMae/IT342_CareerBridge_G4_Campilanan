@@ -34,3 +34,7 @@ build/
 
 .env
 .idea/
+backend/.idea/
+uploads/
+*.log
+

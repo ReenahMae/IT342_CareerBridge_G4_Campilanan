@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a26778a4-e758-4329-9885-796bd4c9444d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Controller/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/applications/ApplicationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/auth/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Controller/EducationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/profile/EducationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Controller/ExperienceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/profile/ExperienceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Controller/JobController.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/jobs/JobController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Controller/JobSeekerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/auth/JobSeekerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Controller/OAuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/auth/OAuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Controller/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/profile/ProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Controller/ResumeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/resume/ResumeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Entity/ApplicationEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/applications/ApplicationEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Entity/EducationEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/profile/EducationEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Entity/ExperienceEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/profile/ExperienceEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Entity/JobEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/jobs/JobEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Entity/ProfileEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/profile/ProfileEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/auth/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Repository/ApplicationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/applications/ApplicationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Repository/EducationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/profile/EducationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Repository/ExperienceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/profile/ExperienceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Repository/JobRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/jobs/JobRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Repository/ProfileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/profile/ProfileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/auth/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Service/EducationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/profile/EducationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Service/ExperienceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/profile/ExperienceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Service/JobService.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/jobs/JobService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Service/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/auth/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Service/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/auth/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Service/OAuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/auth/OAuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Service/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/profile/ProfileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/auth/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Service/adapter/GoogleUserAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Service/adapter/GoogleUserAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Service/factory/UserFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Service/factory/UserFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Service/strategy/GoogleLoginStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Service/strategy/GoogleLoginStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Service/strategy/LoginContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Service/strategy/LoginContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Service/strategy/LoginStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Service/strategy/LoginStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Service/strategy/ManualLoginStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/Service/strategy/ManualLoginStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/dto/ApplicationResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/applications/ApplicationResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/dto/LoginRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/auth/LoginRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/dto/RegisterRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/java/edu/cit/campilanan/careerbridge/features/auth/RegisterRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerbridge/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/careerbridge/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="3CQZX7TPzomhblyfpM8Tz2XbKMM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.CareerbridgeApplication.executor": "Run",
+    "git-widget-placeholder": "vertical-slice-final",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/rcamp/OneDrive/Desktop/IT342_CareerBridge_G4_Campilanan/backend"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a26778a4-e758-4329-9885-796bd4c9444d" name="Changes" comment="" />
+      <created>1776319792770</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1776319792770</updated>
+    </task>
+    <servers />
+  </component>
+</project>

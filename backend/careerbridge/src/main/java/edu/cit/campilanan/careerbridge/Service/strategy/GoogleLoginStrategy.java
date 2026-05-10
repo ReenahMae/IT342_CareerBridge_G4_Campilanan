@@ -1,7 +1,7 @@
 package edu.cit.campilanan.careerbridge.Service.strategy;
 
-import edu.cit.campilanan.careerbridge.Entity.UserEntity;
-import edu.cit.campilanan.careerbridge.Service.OAuthService;
+import edu.cit.campilanan.careerbridge.features.auth.UserEntity;
+import edu.cit.campilanan.careerbridge.features.auth.OAuthService;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
 public class GoogleLoginStrategy implements LoginStrategy {
