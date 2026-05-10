@@ -34,10 +34,18 @@ public class AuthController {
         }
     }
     @PostMapping("/login")
-    public Map<String, String> login(@RequestBody LoginRequestDTO request) {
+    public Map<String, Object> login(@RequestBody LoginRequestDTO request) {
 
-        String token = userService.login(request);
+        UserEntity user = userService.authenticateUser(request);
 
-        return Map.of("token", token);
+        String token = userService.generateToken(user);
+
+        return Map.of(
+                "token", token,
+                "role", user.getRole(),
+                "id", user.getId(),
+                "fullName", user.getFullName(),
+                "email", user.getEmail()
+        );
     }
 }
