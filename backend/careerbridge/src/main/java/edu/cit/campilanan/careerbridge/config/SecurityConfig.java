@@ -1,7 +1,7 @@
 package edu.cit.campilanan.careerbridge.config;
 
-import edu.cit.campilanan.careerbridge.Service.JwtAuthenticationFilter;
-import edu.cit.campilanan.careerbridge.Service.OAuthService;
+import edu.cit.campilanan.careerbridge.features.auth.JwtAuthenticationFilter;
+import edu.cit.campilanan.careerbridge.features.auth.OAuthService;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

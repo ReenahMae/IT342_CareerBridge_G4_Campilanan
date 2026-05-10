@@ -1,6 +1,6 @@
 package edu.cit.campilanan.careerbridge.Service.factory;
 
-import edu.cit.campilanan.careerbridge.Entity.UserEntity;
+import edu.cit.campilanan.careerbridge.features.auth.UserEntity;
 
 public class UserFactory {
 

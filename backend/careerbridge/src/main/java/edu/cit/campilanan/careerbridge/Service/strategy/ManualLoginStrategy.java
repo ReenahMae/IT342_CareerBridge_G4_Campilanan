@@ -1,7 +1,7 @@
 package edu.cit.campilanan.careerbridge.Service.strategy;
 
-import edu.cit.campilanan.careerbridge.Entity.UserEntity;
-import edu.cit.campilanan.careerbridge.Repository.UserRepository;
+import edu.cit.campilanan.careerbridge.features.auth.UserEntity;
+import edu.cit.campilanan.careerbridge.features.auth.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 public class ManualLoginStrategy implements LoginStrategy {

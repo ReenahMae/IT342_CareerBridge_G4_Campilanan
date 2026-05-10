@@ -1,6 +1,6 @@
 package edu.cit.campilanan.careerbridge.Service.adapter;
 
-import edu.cit.campilanan.careerbridge.Entity.UserEntity;
+import edu.cit.campilanan.careerbridge.features.auth.UserEntity;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
 import java.time.LocalDateTime;
